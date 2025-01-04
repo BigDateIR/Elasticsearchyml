@@ -1,0 +1,23 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.26
+    container_name: es12-test
+    ports:
+      - "9200:9200"  # REST API
+      - "9300:9300"  # Transport API
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - C:/Users/Admin/Desktop/docsdata/elasticsearch_data:/usr/share/elasticsearch/data # Persist Elasticsearch data
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.26 # Use supported version
+    container_name: kib012-test
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es12-test:9200
+    depends_on:
+      - elasticsearch
+    volumes:
+      - C:/Users/Admin/Desktop/docsdata/kibana_data:/usr/share/kibana/data # Persist Kibana data

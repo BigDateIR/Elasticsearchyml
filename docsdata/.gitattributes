@@ -1,0 +1,2 @@
+elasticsearch_data filter=lfs diff=lfs merge=lfs -text
+kibana_data filter=lfs diff=lfs merge=lfs -text
