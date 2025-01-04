@@ -7,11 +7,11 @@ to run it :
 2.edit docker-compose.yml to volumes for elasticsearch and kibana  to make it 
 for kibana  
 volumes:
- - PULL PATHE TO (kibana_data)file :/usr/share/kibana/data
+ - PULL PATH TO (kibana_data)file :/usr/share/kibana/data
 
    for elasticsearch  
 volumes:
- - PULL PATHE TO (elasticsearch_data)file:/usr/share/elasticsearch/data
+ - PULL PATH TO (elasticsearch_data)file:/usr/share/elasticsearch/data
 
 3.make go  to file that contane (elasticsearch_data , kibana_data and docker-compose.yml) by use cd
 
